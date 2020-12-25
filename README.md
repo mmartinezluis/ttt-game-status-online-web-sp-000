@@ -1,3 +1,31 @@
+
+def won?(board)
+winner=[]
+  WIN_COMBINATIONS.select do |element|
+    win_index_0=element[0]
+    win_index_1=element[1]
+    win_index_2=element[2]
+
+    position_1=board[win_index_0]
+    position_2=board[win_index_1]
+    position_3=board[win_index_2]
+
+    if position_1 == " " && position_2 ==" " && position_3 == " "
+      winner=false
+    elsif (position_1 == "X" && position_2 =="X" && position_3 == "X") || (position_1 == "O" && position_2 =="O" && position_3 == "O")
+      winner=element
+    end
+  end
+  return winner
+end
+
+
+
+
+
+
+
+
 # Tic Tac Toe Game Status
 
 ## Objectives
